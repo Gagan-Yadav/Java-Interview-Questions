@@ -1,4 +1,4 @@
-import java.util.Arrays;
+import java.util.*;
 
 public class Longest_CommonPrefix_in_String
 {
