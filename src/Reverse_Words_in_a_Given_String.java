@@ -5,10 +5,10 @@ public class Reverse_Words_in_a_Given_String {
 
     static String check(String str){
         String[] rev=null;
-       rev = str.trim().split("\\s");
+       rev = str.trim().split("\\s"); // for dot matching  rev = str.trim().split("\\.");
        String str2="";
         for (int i = rev.length-1; i >= 0 ; i--) {
-                str2 +=rev[i]+" ";
+                str2 +=rev[i]+" "; // for dot use str2 +=rev[i]+".";
         }
         return str2;
     }
