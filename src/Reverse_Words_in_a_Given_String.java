@@ -16,6 +16,7 @@ public class Reverse_Words_in_a_Given_String {
 
         Scanner sc = new Scanner(System.in);
 
+        System.out.print("Enter String - ");
         String str = sc.nextLine();
         System.out.println("Original String - "+str);
 
