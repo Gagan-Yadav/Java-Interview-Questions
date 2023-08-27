@@ -8,6 +8,10 @@ public class Find_MiddleElement_in_Linkedlist {
         list.add(26);
         list.add(2);
         list.add(12);
+        list.add(1);
+
+//           System.out.println(list.peek());
+//           System.out.println(list.peekLast());
 
         int middle = list.size()/2;
            System.out.println("Middle Element - "+list.get(middle));
