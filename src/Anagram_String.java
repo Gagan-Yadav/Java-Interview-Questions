@@ -18,8 +18,8 @@ public class Anagram_String {
 
         return true;
     }
+    
     public static void main(String[] args) {
-        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
 
         Scanner sc = new Scanner(System.in);
         String str1 = sc.next().toLowerCase();
@@ -31,7 +31,7 @@ public class Anagram_String {
         if(Anagram(ch1,ch2))
              System.out.println("Anagram");
         else
-            System.out.println("Not Anaggr");
+            System.out.println("Not Anagram");
 
     }
 }
