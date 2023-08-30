@@ -37,7 +37,9 @@ public class Valid_UserName_Regular_Expression {
 
                 isLength = true;
 
-                if(temp.matches(regex) && !temp.contains("@?")){ // You can  Add more Regex {?#$%^&*":<>';} in contains method
+                if(temp.matches(regex) && !temp.contains("@?")){
+                    // You can  Add more Regex {?#$%^&*":<>';} in contains method.
+                    // Make Sure use Escape Sequence (\) for some Special Characters.
                     isSpecialChar = true;
 
                     char c = temp.charAt(0);
