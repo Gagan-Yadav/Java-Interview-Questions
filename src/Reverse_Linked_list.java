@@ -1,14 +1,29 @@
 import java.util.*;
 public class Reverse_Linked_list {
 
+    public static class Node{
+        int data;
+        Node next;
+
+        Node(int data){
+            this.data = data;
+        }
+    }
+
     public static void main(String[] args) {
-        LinkedList<Integer> list = new LinkedList<>();
-        list.add(1);
-        list.add(2);
-        list.add(3);
-        list.push(3);
-        list.add(0,0);
+      Node a = new Node(1);
+        Node b = new Node(2);
+        Node c = new Node(3);
+
+        a.next = b;
+        b.next = c;
+
+        Node temp = a;
+        while (temp!=null){
+            System.out.print(temp.data+" ");
+            temp = temp.next;
+        }
         
-        System.out.println(list);
+//        System.out.println(a.next.next.data);
     }
 }
