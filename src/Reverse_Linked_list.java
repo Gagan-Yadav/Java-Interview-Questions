@@ -24,6 +24,6 @@ public class Reverse_Linked_list {
             temp = temp.next;
         }
         
-//        System.out.println(a.next.next.data);
+//        System.out.println(a.data); //1
     }
 }
