@@ -1,6 +1,18 @@
 import java.util.*;
 public class Reverse_Linked_list {
 
+    public static void display(Node head){
+        while (head!=null){
+            System.out.print(head.data+" ");
+            head = head.next;
+        }
+    }
+
+    public static void display_reverse(Node head){
+        if(head==null) return;
+        display_reverse(head.next);
+        System.out.print(head.data+" ");
+    }
     public static class Node{
         int data;
         Node next;
@@ -22,11 +34,9 @@ public class Reverse_Linked_list {
         c.next = d;
         d.next = e;
 
-        Node temp = a;
-        while (temp!=null){
-            System.out.print(temp.data+" ");
-            temp = temp.next;
-        }
+        display(a);
+        
+
         
 //        System.out.println(a.data); //1
     }
