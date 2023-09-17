@@ -13,6 +13,7 @@ public class Reverse_Linked_list {
         display_reverse(head.next);
         System.out.print(head.data+" ");
     }
+    
     public static class Node{
         int data;
         Node next;
@@ -34,9 +35,9 @@ public class Reverse_Linked_list {
         c.next = d;
         d.next = e;
 
-        System.out.print("Original Linked List - ");
+        System.out.print("Original Linked List - "); // 1 2 3 4 5
         display(a);
-        System.out.print("\nReversed Linked List - ");
+        System.out.print("\nReversed Linked List - "); // 5 4 3 2 1
         display_reverse(a);
 
         
