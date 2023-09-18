@@ -13,6 +13,7 @@ public class Linked_List_Implementation {
     public static class linkedlist{
         Node head = null;
         Node tail = null;
+        int size = 0;
 
         void insertAtEnd(int val){
             Node temp = new Node(val);
@@ -22,6 +23,7 @@ public class Linked_List_Implementation {
                 tail.next = temp;
             }
             tail = temp;
+            size++;
         }
 
         void insertAtHead(int val){
@@ -32,19 +34,20 @@ public class Linked_List_Implementation {
                     temp.next = head;
                     head = temp;
             }
+            size++;
         }
 
         void insertAt(int idx,int val){
             Node tempval = new Node(val);
             Node temp = head;
 
-            if(idx==size()){
+            if(idx==size){
                 insertAtEnd(val);
                 return;
             }else if(idx==0){
                 insertAtHead(val);
                 return;
-            } else if (idx<0 || idx>size()) {
+            } else if (idx<0 || idx>size) {
                 System.out.println("Wrong Index");
                 return;
             }
@@ -53,11 +56,12 @@ public class Linked_List_Implementation {
             }
             tempval.next = temp.next;
             temp.next = tempval;
+            size++;
         }
 
         int getValueAt(int idx){
             Node temp = head;
-            if(idx<0 || idx>size()){
+            if(idx<0 || idx>size){
                 System.out.print("Wrong Index Value ");
                 return idx;
             }
@@ -77,15 +81,16 @@ public class Linked_List_Implementation {
             System.out.println();
         }
 
-        int size(){
-            int count = 0;
-            Node temp = head;
-            while (temp!=null){
-                count++;
-                temp = temp.next;
-            }
-            return count;
-        }
+//        int size(){
+//            // Time Complexity of this function is O(n) thats why we dont use it instead we use size attribute
+//            int count = 0;
+//            Node temp = head;
+//            while (temp!=null){
+//                count++;
+//                temp = temp.next;
+//            }
+//            return count;
+//        }
 
     }
     public static void main(String[] args) {
@@ -99,10 +104,11 @@ public class Linked_List_Implementation {
         ll.insertAtHead(1);
         ll.insertAt(4,33);
         ll.insertAt(6,35);
+        ll.insertAtEnd(100);
 
 
         ll.display();
-        System.out.println("Size - "+ll.size());
+        System.out.println("Size - "+ll.size);
         System.out.println("("+ll.getValueAt(9)+")");
         System.out.println("Tail = "+ll.tail.data);
         System.out.println("Head = "+ ll.head.data);
