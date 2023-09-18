@@ -33,6 +33,40 @@ public class Linked_List_Implementation {
                     head = temp;
             }
         }
+
+        void insertAt(int idx,int val){
+            Node tempval = new Node(val);
+            Node temp = head;
+
+            if(idx==size()){
+                insertAtEnd(val);
+                return;
+            }else if(idx==0){
+                insertAtHead(val);
+                return;
+            } else if (idx<0 || idx>size()) {
+                System.out.println("Wrong Index");
+                return;
+            }
+            for (int i = 0; i <idx-1; i++) {
+                temp = temp.next;
+            }
+            tempval.next = temp.next;
+            temp.next = tempval;
+        }
+
+        int getValueAt(int idx){
+            Node temp = head;
+            if(idx<0 || idx>size()){
+                System.out.print("Wrong Index Value ");
+                return idx;
+            }
+            for (int i = 0; i <idx; i++) {
+                temp = temp.next;
+            }
+            return temp.data;
+        }
+
         void display(){
             Node temp = head;
             while (temp!=null)
@@ -59,13 +93,18 @@ public class Linked_List_Implementation {
         linkedlist ll = new linkedlist();
 
         ll.insertAtEnd(4);
-        ll.insertAtHead(0);
+        ll.insertAt(0,0);
         ll.insertAtEnd(3);
-        ll.insertAtHead(34);
+        ll.insertAtEnd(34);
         ll.insertAtHead(1);
+        ll.insertAt(4,33);
+        ll.insertAt(6,35);
 
 
         ll.display();
         System.out.println("Size - "+ll.size());
+        System.out.println("("+ll.getValueAt(9)+")");
+        System.out.println("Tail = "+ll.tail.data);
+        System.out.println("Head = "+ ll.head.data);
     }
 }
