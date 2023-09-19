@@ -65,10 +65,25 @@ public class Linked_List_Implementation {
                 System.out.print("Wrong Index Value ");
                 return idx;
             }
-            for (int i = 0; i <idx; i++) {
+            for (int i = 1; i <idx; i++) {
                 temp = temp.next;
             }
             return temp.data;
+        }
+
+        void deleteAt(int idx){
+            Node temp = head;
+            if(idx==0){
+                head = head.next;
+                size--;
+                return;
+            }
+            for (int i = 1; i < idx-1; i++) {
+                temp = temp.next;
+            }
+            temp.next = temp.next.next;
+            tail = temp;
+            size--;
         }
 
         void display(){
@@ -98,18 +113,21 @@ public class Linked_List_Implementation {
         linkedlist ll = new linkedlist();
 
         ll.insertAtEnd(4);
-        ll.insertAt(0,0);
+        ll.insertAt(0,90);
         ll.insertAtEnd(3);
         ll.insertAtEnd(34);
         ll.insertAtHead(1);
+        ll.insertAtHead(11);
         ll.insertAt(4,33);
         ll.insertAt(6,35);
         ll.insertAtEnd(100);
 
 
         ll.display();
+        ll.deleteAt(0);
+        ll.display();
         System.out.println("Size - "+ll.size);
-        System.out.println("("+ll.getValueAt(9)+")");
+//        System.out.println("("+ll.getValueAt(9)+")");
         System.out.println("Tail = "+ll.tail.data);
         System.out.println("Head = "+ ll.head.data);
     }
