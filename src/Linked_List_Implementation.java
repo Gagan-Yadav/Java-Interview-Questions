@@ -129,13 +129,13 @@ public class Linked_List_Implementation {
 //        ll.insertAt(4,33);
 //        ll.insertAt(6,35);
         ll.insertAtEnd(100);
-//        ll.insertAt(1,90);
+        ll.insertAt(1,90);
         ll.insertAtEnd(27);
 
 
 
         ll.display();
-        ll.deleteAt(0);
+        ll.deleteAt(4);
         ll.display();
         System.out.println("Size - "+ll.size);
         System.out.println("("+ll.getValueAt(0)+")");
