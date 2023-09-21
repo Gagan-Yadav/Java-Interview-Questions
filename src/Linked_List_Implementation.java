@@ -116,13 +116,13 @@ public class Linked_List_Implementation {
                 return;
             }
 
-        Node temp = head;
+            Node temp = head;
             for (int i = 0; i < idx - 1; i++)
             {
             temp = temp.next;
             }
 
-        temp.next = temp.next.next;
+            temp.next = temp.next.next;
 
             if (idx == size - 1) {
             tail = temp; // Update tail when deleting the last element
