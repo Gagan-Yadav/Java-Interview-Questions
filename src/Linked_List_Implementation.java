@@ -122,6 +122,13 @@ public class Linked_List_Implementation {
         size--;
     }
 
+    Node find(int val){
+            Node temp = head;
+            while (head!=null){
+                
+            }
+    }
+
   /*      int size(){
             // Time Complexity of this function is O(n) thats why we dont use it instead we use size attribute
             int count = 0;
