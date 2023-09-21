@@ -122,16 +122,16 @@ public class Linked_List_Implementation {
         size--;
     }
 
-    Node find(int val){
+    String find(int val){
             Node temp = head;
             while (temp!=null){
 
                 if(temp.data==val){
-                    return temp;
+                    return "Found";
                 }
                 temp = temp.next;
             }
-            return null;
+            return "Not Found";
     }
 
   /*      int size(){
@@ -172,7 +172,7 @@ public class Linked_List_Implementation {
 //        System.out.println("Deleted Element - "+ll.deleteFirst());
 //        System.out.println("Deleted Element - "+ll.deleteLast());
         ll.display();
-        System.out.println("Found - "+ll.find(90).data);
+//        System.out.println(ll.find(20));
         System.out.println("Size - "+ll.size);
         System.out.println("("+ll.getValueAt(2).data+")");
         System.out.println("Tail = "+ll.tail.data);
