@@ -124,9 +124,14 @@ public class Linked_List_Implementation {
 
     Node find(int val){
             Node temp = head;
-            while (head!=null){
-                
+            while (temp!=null){
+
+                if(temp.data==val){
+                    return temp;
+                }
+                temp = temp.next;
             }
+            return null;
     }
 
   /*      int size(){
@@ -167,6 +172,7 @@ public class Linked_List_Implementation {
 //        System.out.println("Deleted Element - "+ll.deleteFirst());
 //        System.out.println("Deleted Element - "+ll.deleteLast());
         ll.display();
+        System.out.println("Found - "+ll.find(90).data);
         System.out.println("Size - "+ll.size);
         System.out.println("("+ll.getValueAt(2).data+")");
         System.out.println("Tail = "+ll.tail.data);
