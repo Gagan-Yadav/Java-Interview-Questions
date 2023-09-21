@@ -108,7 +108,7 @@ public class Linked_List_Implementation {
             if(idx==0){
                 deleteFirst(); // Update tail when deleting the last element
                 return;
-            } else if (idx==size) {
+            } else if (idx==size-1) {
                 deleteLast();
                 return;
             } else if (idx < 0 || idx >= size) {
@@ -117,13 +117,8 @@ public class Linked_List_Implementation {
             }
 
             Node prev = getValueAt(idx-1);
-            
+            prev.next = prev.next.next;
 
-            temp.next = temp.next.next;
-
-            if (idx == size - 1) {
-            tail = temp; // Update tail when deleting the last element
-        }
         size--;
     }
 
@@ -159,7 +154,7 @@ public class Linked_List_Implementation {
 
 
         ll.display();
-        ll.deleteAt(7);
+        ll.deleteAt(6);
 //        ll.deleteAt(1);
 
 //        System.out.println("Deleted Element - "+ll.deleteFirst());
