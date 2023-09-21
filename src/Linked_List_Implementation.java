@@ -79,8 +79,10 @@ public class Linked_List_Implementation {
             }
             System.out.println();
         }
+
         int deleteFirst(){
             int data = head.data;
+
             if(head.next==null){
                 head = tail = null;
             }
@@ -103,22 +105,25 @@ public class Linked_List_Implementation {
         }
 
         void deleteAt(int idx) {
-            if (idx == 0) {
+            if(idx==0){
                 deleteFirst(); // Update tail when deleting the last element
                 return;
             } else if (idx==size) {
                 deleteLast();
                 return;
             } else if (idx < 0 || idx >= size) {
-            System.out.println("Wrong Index");
-            return;
-               }
+                System.out.println("Wrong Index");
+                return;
+            }
 
         Node temp = head;
-            for (int i = 0; i < idx - 1; i++) {
+            for (int i = 0; i < idx - 1; i++)
+            {
             temp = temp.next;
-        }
+            }
+
         temp.next = temp.next.next;
+            
             if (idx == size - 1) {
             tail = temp; // Update tail when deleting the last element
         }
