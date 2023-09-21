@@ -70,30 +70,6 @@ public class Linked_List_Implementation {
             return temp;
         }
 
-        void deleteAt(int idx) {
-            if (idx == 0) {
-                head = head.next;
-                size--;
-                if (size == 0) {
-                    tail = null; // Update tail when deleting the last element
-                }
-                return;
-            } else if (idx < 0 || idx >= size) {
-                System.out.println("Wrong Index");
-                return;
-            }
-
-            Node temp = head;
-            for (int i = 0; i < idx - 1; i++) {
-                temp = temp.next;
-            }
-            temp.next = temp.next.next;
-            if (idx == size - 1) {
-                tail = temp; // Update tail when deleting the last element
-            }
-            size--;
-        }
-
         void display(){
             Node temp = head;
             while (temp!=null)
@@ -126,6 +102,29 @@ public class Linked_List_Implementation {
             return data;
         }
 
+        void deleteAt(int idx) {
+            if (idx == 0) {
+                deleteFirst(); // Update tail when deleting the last element
+                return;
+            } else if (idx==size) {
+                deleteLast();
+                return;
+            } else if (idx < 0 || idx >= size) {
+            System.out.println("Wrong Index");
+            return;
+               }
+
+        Node temp = head;
+            for (int i = 0; i < idx - 1; i++) {
+            temp = temp.next;
+        }
+        temp.next = temp.next.next;
+            if (idx == size - 1) {
+            tail = temp; // Update tail when deleting the last element
+        }
+        size--;
+    }
+
 //        int size(){
 //            // Time Complexity of this function is O(n) thats why we dont use it instead we use size attribute
 //            int count = 0;
@@ -151,15 +150,17 @@ public class Linked_List_Implementation {
 //        ll.insertAt(6,35);
         ll.insertAtEnd(100);
         ll.insertAt(0,90);
-//        ll.insertAtEnd(27);
+        ll.insertAtEnd(27);
+        ll.insertAt(3,33);
 
 
 
         ll.display();
-//        ll.deleteAt(4);
+        ll.deleteAt(7);
+//        ll.deleteAt(1);
 
 //        System.out.println("Deleted Element - "+ll.deleteFirst());
-        System.out.println("Deleted Element - "+ll.deleteLast());
+//        System.out.println("Deleted Element - "+ll.deleteLast());
         ll.display();
         System.out.println("Size - "+ll.size);
 //        System.out.println("("+ll.getValueAt(0)+")");
