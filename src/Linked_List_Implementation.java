@@ -104,6 +104,15 @@ public class Linked_List_Implementation {
             }
             System.out.println();
         }
+        int deleteFirst(){
+            int data = head.data;
+            if(head.next==null){
+                head = tail = null;
+            }
+            head = head.next;
+            size--;
+            return data;
+        }
 
 //        int size(){
 //            // Time Complexity of this function is O(n) thats why we dont use it instead we use size attribute
@@ -129,13 +138,15 @@ public class Linked_List_Implementation {
 //        ll.insertAt(4,33);
 //        ll.insertAt(6,35);
         ll.insertAtEnd(100);
-        ll.insertAt(1,90);
+        ll.insertAt(0,90);
         ll.insertAtEnd(27);
 
 
 
         ll.display();
-        ll.deleteAt(4);
+//        ll.deleteAt(4);
+
+        System.out.println("Deleted Element - "+ll.deleteFirst());
         ll.display();
         System.out.println("Size - "+ll.size);
         System.out.println("("+ll.getValueAt(0)+")");
