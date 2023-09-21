@@ -169,7 +169,7 @@ public class Linked_List_Implementation {
 //        System.out.println("Deleted Element - "+ll.deleteLast());
         ll.display();
         System.out.println("Size - "+ll.size);
-//        System.out.println("("+ll.getValueAt(0)+")");
+        System.out.println("("+ll.getValueAt(2).data+")");
         System.out.println("Tail = "+ll.tail.data);
         System.out.println("Head = "+ ll.head.data);
     }
