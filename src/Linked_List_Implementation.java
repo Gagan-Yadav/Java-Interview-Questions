@@ -114,6 +114,14 @@ public class Linked_List_Implementation {
             return data;
         }
 
+        int deleteLast(){
+            int data = tail.data;
+
+            tail = null;
+            size--;
+            return data;
+        }
+
 //        int size(){
 //            // Time Complexity of this function is O(n) thats why we dont use it instead we use size attribute
 //            int count = 0;
@@ -146,7 +154,8 @@ public class Linked_List_Implementation {
         ll.display();
 //        ll.deleteAt(4);
 
-        System.out.println("Deleted Element - "+ll.deleteFirst());
+//        System.out.println("Deleted Element - "+ll.deleteFirst());
+        System.out.println("Deleted Element - "+ll.deleteLast());
         ll.display();
         System.out.println("Size - "+ll.size);
         System.out.println("("+ll.getValueAt(0)+")");
