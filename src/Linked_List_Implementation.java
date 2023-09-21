@@ -59,16 +59,15 @@ public class Linked_List_Implementation {
             size++;
         }
 
-        int getValueAt(int idx){
+        Node getValueAt(int idx){
             Node temp = head;
             if(idx<0 || idx>size){
                 System.out.print("Wrong Index Value ");
-                return idx;
             }
-            for (int i = 1; i <idx; i++) {
+            for (int i = 0; i <idx; i++) {
                 temp = temp.next;
             }
-            return temp.data;
+            return temp;
         }
 
         void deleteAt(int idx) {
@@ -116,8 +115,13 @@ public class Linked_List_Implementation {
 
         int deleteLast(){
             int data = tail.data;
+            if(size<=1){
+                return deleteFirst();
+            }
 
-            tail = null;
+          Node secondlast =  getValueAt(size-2);
+            tail = secondlast;
+            tail.next = null;
             size--;
             return data;
         }
@@ -147,7 +151,7 @@ public class Linked_List_Implementation {
 //        ll.insertAt(6,35);
         ll.insertAtEnd(100);
         ll.insertAt(0,90);
-        ll.insertAtEnd(27);
+//        ll.insertAtEnd(27);
 
 
 
@@ -158,7 +162,7 @@ public class Linked_List_Implementation {
         System.out.println("Deleted Element - "+ll.deleteLast());
         ll.display();
         System.out.println("Size - "+ll.size);
-        System.out.println("("+ll.getValueAt(0)+")");
+//        System.out.println("("+ll.getValueAt(0)+")");
         System.out.println("Tail = "+ll.tail.data);
         System.out.println("Head = "+ ll.head.data);
     }
