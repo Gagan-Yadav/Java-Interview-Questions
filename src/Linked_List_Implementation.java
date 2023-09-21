@@ -123,23 +123,24 @@ public class Linked_List_Implementation {
             }
 
         temp.next = temp.next.next;
-            
+
             if (idx == size - 1) {
             tail = temp; // Update tail when deleting the last element
         }
         size--;
     }
 
-//        int size(){
-//            // Time Complexity of this function is O(n) thats why we dont use it instead we use size attribute
-//            int count = 0;
-//            Node temp = head;
-//            while (temp!=null){
-//                count++;
-//                temp = temp.next;
-//            }
-//            return count;
-//        }
+  /*      int size(){
+            // Time Complexity of this function is O(n) thats why we dont use it instead we use size attribute
+            int count = 0;
+            Node temp = head;
+            while (temp!=null){
+                count++;
+                temp = temp.next;
+            }
+            return count;
+        }
+  */
 
     }
     public static void main(String[] args) {
