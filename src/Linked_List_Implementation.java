@@ -116,11 +116,8 @@ public class Linked_List_Implementation {
                 return;
             }
 
-            Node temp = head;
-            for (int i = 0; i < idx - 1; i++)
-            {
-            temp = temp.next;
-            }
+            Node prev = getValueAt(idx-1);
+            
 
             temp.next = temp.next.next;
 
